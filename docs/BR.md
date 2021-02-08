@@ -1017,6 +1017,16 @@ Prior to the issuance of a Certificate, the CA SHALL obtain from the Applicant a
 
 The certificate request MUST contain a request from, or on behalf of, the Applicant for the issuance of a Certificate, and a certification by, or on behalf of, the Applicant that all of the information contained therein is correct.
 
+### 4.1.2 Compromised Key Database
+
+In support of section 4.9.1, the CA SHALL maintain an internal Compromised Key Database which:
+
+1. records all certificates revoked by the CA due to key compromise
+2. stores all weak keys known to the CA (e.g. Debian weak keys)
+3. stores any other keys known to be compromised by the CA
+
+The CA MUST reject any certificate request for a key in the Compromised Key Database.
+
 ## 4.2 Certificate application processing
 
 ### 4.2.1 Performing identification and authentication functions
