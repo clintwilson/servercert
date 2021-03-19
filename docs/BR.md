@@ -931,7 +931,17 @@ The CA SHALL disclose all Cross Certificates that identify the CA as the Subject
 
 ## 4.1 Certificate Application
 
-### 4.1.1 Enrollment process and responsibilities
+### 4.1.1 Compromised and Forbidden Key Database
+
+The CA SHALL maintain an internal database of Compromised and Forbidden Keys, which stores:
+
+1. key identifiers associated with all certificates revoked by the CA due to a Key Compromise;
+2. key identifiers associated with all certificates or keys known by the CA to qualify as a Key Compromise; and
+3. key identifiers of all weak keys associated with key sizes accepted for issuance by the CA (such as a Debian weak key, see https://wiki.debian.org/SSLkeys).
+
+This database MUST be managed and maintained for the duration of the life of the CA. The CA MUST reject any certificate request for a key matching an identifier stored in this database.
+
+### 4.1.2 Enrollment process and responsibilities
 Prior to the issuance of a Certificate, the CA SHALL obtain the following documentation from the Applicant:
 
 1. A certificate request, which may be electronic; and
@@ -942,16 +952,6 @@ The CA SHOULD obtain any additional documentation the CA determines necessary to
 Prior to the issuance of a Certificate, the CA SHALL obtain from the Applicant a certificate request in a form prescribed by the CA and that complies with these Requirements. One certificate request MAY suffice for multiple Certificates to be issued to the same Applicant, subject to the aging and updating requirement in Section 4.2.1, provided that each Certificate is supported by a valid, current certificate request signed by the appropriate Applicant Representative on behalf of the Applicant. The certificate request MAY be made, submitted and/or signed electronically.
 
 The certificate request MUST contain a request from, or on behalf of, the Applicant for the issuance of a Certificate, and a certification by, or on behalf of, the Applicant that all of the information contained therein is correct.
-
-### 4.1.2 Compromised Key Database
-
-In support of section 4.9.1, the CA SHALL maintain an internal Compromised Key Database which:
-
-1. records all certificates revoked by the CA due to key compromise
-2. stores all weak keys known to the CA (e.g. Debian weak keys)
-3. stores any other keys known to be compromised by the CA
-
-The CA MUST reject any certificate request for a key in the Compromised Key Database.
 
 ## 4.2 Certificate application processing
 
