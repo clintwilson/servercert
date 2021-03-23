@@ -1329,7 +1329,6 @@ The CA SHALL verify that the Delegated Third Party's personnel involved in the i
 ## 5.4 Audit logging procedures
 
 ### 5.4.1 Types of events recorded
-
 The CA and each Delegated Third Party SHALL record details of the actions taken to process a certificate request and to issue a Certificate, including all information generated and documentation received in connection with the certificate request; the time and date; and the personnel involved. The CA SHALL make these records available to its Qualified Auditor as proof of the CA’s compliance with these Requirements.
 
 The CA SHALL record at least the following events:
@@ -1344,10 +1343,11 @@ The CA SHALL record at least the following events:
 
 2. Subscriber Certificate lifecycle management events, including:
    1. Certificate requests, renewal, and re-key requests, and revocation;
-   2. All verification activities stipulated and supporting documentation required to be collected in these Requirements and the CA's Certification Practice Statement;
-   3. Approval and rejection of certificate requests;
-   4. Issuance of Certificates; and
-   5. Generation of Certificate Revocation Lists and OCSP entries.
+   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
+   3. All documentation relating to the verification, issuance, and revocation of certificate requests and Certificates;
+   4. Approval and rejection of certificate requests;
+   5. Issuance of Certificates; and
+   6. Generation of Certificate Revocation Lists and OCSP entries.
 
 3. Security events, including:
    1. Successful and unsuccessful PKI system access attempts;
@@ -1386,22 +1386,16 @@ Additionally, the CA's security program MUST include an annual Risk Assessment t
 ## 5.5 Records archival
 
 ### 5.5.1 Types of records archived
+CAs SHALL archive all Audit Log records in accordance with the retention period defined in 5.5.2.
 
 ### 5.5.2 Retention period for archive
-
 The CA SHALL retain, for at least two years:
 
   1. CA certificate and key lifecycle management event records (as set forth in Section 5.4.1 (1)) after the later occurrence of:
      1. the destruction of the CA Private Key; or
      2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key;
   2. Subscriber Certificate lifecycle management event records (as set forth in Section 5.4.1 (2)) after the revocation or expiration of the Subscriber Certificate;
-  3. Any security event records (as set forth in Section 5.4.1 (3)) after the event occurred;
-  4. All documentation relating to certificate requests is retained for the period defined above after the latter of:
-     1. the certificate request was made, but no certificate was issued; or
-     2. the revocation or expiration of the certificate issued based upon the certificate request;
-  5. All documentation relating to the verification of certificate requests is retained for the period defined above after the revocation or expiration of all Subscriber Certificates issued based upon said documentation;
-  6. All documentation relating to the issuance of Subscriber Certificates is retained for the period defined above after the revocation or expiration of the Subscriber Certificate;
-  7. All documentation relating to the revocation of Subscriber Certificates is retained for the period defined above after the revocation of the Subscriber Certificate.
+  3. Any security event records (as set forth in Section 5.4.1 (3)) after the event occurred.
 
 ### 5.5.3 Protection of archive
 
