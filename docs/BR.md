@@ -1346,8 +1346,9 @@ The CA SHALL record at least the following events:
    2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
    3. All documentation relating to the verification, issuance, and revocation of certificate requests and Certificates;
    4. Approval and rejection of certificate requests;
-   5. Issuance of Certificates; and
-   6. Generation of Certificate Revocation Lists and OCSP entries.
+   5. Issuance of Certificates;
+   6. Generation of Certificate Revocation Lists; and 
+   7. Signing of OCSP Responses (as described in 4.9 and 4.10).
 
 3. Security events, including:
    1. Successful and unsuccessful PKI system access attempts;
@@ -1386,10 +1387,10 @@ Additionally, the CA's security program MUST include an annual Risk Assessment t
 ## 5.5 Records archival
 
 ### 5.5.1 Types of records archived
-CAs SHALL archive all Audit Log records in accordance with the retention period defined in 5.5.2.
+The CA SHALL archive all Audit Log Events identified in 5.4.1.
 
 ### 5.5.2 Retention period for archive
-The CA SHALL retain, for at least two years:
+The CA and each Delegated Third Party SHALL retain, for at least two years:
 
   1. CA certificate and key lifecycle management event records (as set forth in Section 5.4.1 (1)) after the later occurrence of:
      1. the destruction of the CA Private Key; or
