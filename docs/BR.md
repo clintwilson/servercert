@@ -931,15 +931,9 @@ The CA SHALL disclose all Cross Certificates that identify the CA as the Subject
 
 ## 4.1 Certificate Application
 
-### 4.1.1 Compromised and Forbidden Key Database
+### 4.1.1 Compromised and Forbidden Keys
 
-The CA SHALL maintain an internal database of Compromised and Forbidden Keys, which stores:
-
-1. key identifiers associated with all certificates revoked by the CA due to a Key Compromise;
-2. key identifiers associated with all certificates or keys known by the CA to qualify as a Key Compromise; and
-3. key identifiers of all weak keys associated with key sizes accepted for issuance by the CA (such as a Debian weak key, see https://wiki.debian.org/SSLkeys).
-
-This database MUST be managed and maintained for the duration of the life of the CA. The CA MUST reject any certificate request for a key matching an identifier stored in this database.
+The CA SHALL implement a Trustworthy System or process which identifies Forbidden, Weak, or Compromised Keys (such as a Debian weak key, see https://wiki.debian.org/SSLkeys). The CA MUST reject any certificate request for a key which matches an identified Forbidden, Weak, or Compromised Key. Upon identifying a Key Compromise, the CA MUST revoke all non-expired Subscriber Certificates which use the Compromised Key.
 
 ### 4.1.2 Enrollment process and responsibilities
 Prior to the issuance of a Certificate, the CA SHALL obtain the following documentation from the Applicant:
