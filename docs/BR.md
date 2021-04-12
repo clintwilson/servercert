@@ -1475,7 +1475,7 @@ The CA SHALL record at least the following events:
    2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
    3. All documentation relating to the verification, issuance, and revocation of certificate requests and Certificates;
    4. Approval and rejection of certificate requests;
-   5. Issuance of Certificates; and
+   5. Issuance of Certificates;
    6. Generation of Certificate Revocation Lists; and
    7. Signing of OCSP Responses (as described in 4.9 and 4.10).
 
