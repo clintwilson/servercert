@@ -1473,9 +1473,11 @@ The CA SHALL record at least the following events:
 2. Subscriber Certificate lifecycle management events, including:
    1. Certificate requests, renewal, and re-key requests, and revocation;
    2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
-   3. Approval and rejection of certificate requests;
-   4. Issuance of Certificates; and
-   5. Generation of Certificate Revocation Lists and OCSP entries.
+   3. All documentation relating to the verification, issuance, and revocation of certificate requests and Certificates;
+   4. Approval and rejection of certificate requests;
+   5. Issuance of Certificates; and
+   6. Generation of Certificate Revocation Lists; and
+   7. Signing of OCSP Responses (as described in 4.9 and 4.10).
 
 3. Security events, including:
    1. Successful and unsuccessful PKI system access attempts;
@@ -1495,14 +1497,6 @@ Log records MUST include the following elements:
 ### 5.4.2 Frequency for Processing and Archiving Audit Logs
 
 ### 5.4.3 Retention Period for Audit Logs
-
-The CA SHALL retain, for at least two years:
-
-  1. CA certificate and key lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (1)) after the later occurrence of:
-     1. the destruction of the CA Private Key; or
-     2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key;
-  2. Subscriber Certificate lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (2)) after the revocation or expiration of the Subscriber Certificate;
-  3. Any security event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (3)) after the event occurred.
 
 ### 5.4.4 Protection of Audit Log
 
@@ -1524,9 +1518,17 @@ Additionally, the CA's security program MUST include an annual Risk Assessment t
 
 ### 5.5.1 Types of records archived
 
+The CA SHALL archive all Audit Log Events identified in [Section 5.4.1](#541-types-of-events-recorded).
+
 ### 5.5.2 Retention period for archive
 
-The CA SHALL retain all documentation relating to certificate requests and the verification thereof, and all Certificates and revocation thereof, for at least seven years after any Certificate based on that documentation ceases to be valid.
+The CA and each Delegated Third Party SHALL retain, for at least two years:
+
+  1. CA certificate and key lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (1)) after the later occurrence of:
+     1. the destruction of the CA Private Key; or
+     2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key;
+  2. Subscriber Certificate lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (2)) after the revocation or expiration of the Subscriber Certificate;
+  3. Any security event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (3)) after the event occurred.
 
 ### 5.5.3 Protection of archive
 
