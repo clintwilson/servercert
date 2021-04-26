@@ -1463,15 +1463,16 @@ The CA SHALL record at least the following events:
    2. Certificate requests, renewal, and re-key requests, and revocation;
    3. Approval and rejection of certificate requests;
    4. Cryptographic device lifecycle management events;
-   5. Generation of Certificate Revocation Lists and OCSP entries;
-   6. Introduction of new Certificate Profiles and retirement of existing Certificate Profiles.
+   5. Generation of Certificate Revocation Lists;
+   6. Signing of OCSP Responses (as described in 4.9 and 4.10); and
+   7. Introduction of new Certificate Profiles and retirement of existing Certificate Profiles.
 
 2. Subscriber Certificate lifecycle management events, including:
    1. Certificate requests, renewal, and re-key requests, and revocation;
    2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
    3. All documentation relating to the verification, issuance, and revocation of certificate requests and Certificates;
    4. Approval and rejection of certificate requests;
-   5. Issuance of Certificates; and
+   5. Issuance of Certificates;
    6. Generation of Certificate Revocation Lists; and
    7. Signing of OCSP Responses (as described in 4.9 and 4.10).
 
