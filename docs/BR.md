@@ -1002,6 +1002,8 @@ The CA SHALL disclose all Cross Certificates that identify the CA as the Subject
 
 ### 4.1.1 Who can submit a certificate application
 
+No stipulation.
+
 ### 4.1.2 Enrollment process and responsibilities
 
 Prior to the issuance of a Certificate, the CA SHALL obtain the following documentation from the Applicant:
