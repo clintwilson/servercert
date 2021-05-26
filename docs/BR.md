@@ -1470,12 +1470,11 @@ The CA SHALL record at least the following events:
 
 2. Subscriber Certificate lifecycle management events, including:
    1. Certificate requests, renewal, and re-key requests, and revocation;
-   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
-   3. All documentation relating to the verification, issuance, and revocation of certificate requests and Certificates;
-   4. Approval and rejection of certificate requests;
-   5. Issuance of Certificates;
-   6. Generation of Certificate Revocation Lists; and
-   7. Signing of OCSP Responses (as described in 4.9 and 4.10).
+   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;   
+   3. Approval and rejection of certificate requests;
+   4. Issuance of Certificates;
+   5. Generation of Certificate Revocation Lists; and
+   6. Signing of OCSP Responses (as described in 4.9 and 4.10).
 
 3. Security events, including:
    1. Successful and unsuccessful PKI system access attempts;
@@ -1516,7 +1515,9 @@ Additionally, the CA's security program MUST include an annual Risk Assessment t
 
 ### 5.5.1 Types of records archived
 
-The CA SHALL archive all Audit Log Events identified in [Section 5.4.1](#541-types-of-events-recorded).
+The CA SHALL archive all:
+1. Audit Log Event Records identified in [Section 5.4.1](#541-types-of-events-recorded); and
+2. Documentation relating to the verification, issuance, and revocation of certificate requests and Certificates.
 
 ### 5.5.2 Retention period for archive
 
