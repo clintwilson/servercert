@@ -1470,7 +1470,7 @@ The CA SHALL record at least the following events:
 
 2. Subscriber Certificate lifecycle management events, including:
    1. Certificate requests, renewal, and re-key requests, and revocation;
-   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;   
+   2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
    3. Approval and rejection of certificate requests;
    4. Issuance of Certificates;
    5. Generation of Certificate Revocation Lists; and
