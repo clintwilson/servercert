@@ -1495,7 +1495,7 @@ Log records MUST include the following elements:
 2. Identity of the person making the journal record; and
 3. Description of the record.
 
-### 5.4.2 Frequency for Processing and Archiving Audit Logs
+### 5.4.2 Frequency of Processing Audit Log
 
 ### 5.4.3 Retention Period for Audit Logs
 
