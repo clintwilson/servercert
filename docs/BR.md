@@ -1468,15 +1468,17 @@ The CA SHALL record at least the following events:
    2. Certificate requests, renewal, and re-key requests, and revocation;
    3. Approval and rejection of certificate requests;
    4. Cryptographic device lifecycle management events;
-   5. Generation of Certificate Revocation Lists and OCSP entries;
-   6. Introduction of new Certificate Profiles and retirement of existing Certificate Profiles.
+   5. Generation of Certificate Revocation Lists;
+   6. Signing of OCSP Responses (as described in 4.9 and 4.10); and
+   7. Introduction of new Certificate Profiles and retirement of existing Certificate Profiles.
 
 2. Subscriber Certificate lifecycle management events, including:
    1. Certificate requests, renewal, and re-key requests, and revocation;
    2. All verification activities stipulated in these Requirements and the CA's Certification Practice Statement;
    3. Approval and rejection of certificate requests;
-   4. Issuance of Certificates; and
-   5. Generation of Certificate Revocation Lists and OCSP entries.
+   4. Issuance of Certificates;
+   5. Generation of Certificate Revocation Lists; and
+   6. Signing of OCSP Responses (as described in 4.9 and 4.10).
 
 3. Security events, including:
    1. Successful and unsuccessful PKI system access attempts;
@@ -1493,17 +1495,9 @@ Log records MUST include the following elements:
 2. Identity of the person making the journal record; and
 3. Description of the record.
 
-### 5.4.2 Frequency for Processing and Archiving Audit Logs
+### 5.4.2 Frequency of Processing Audit Log
 
 ### 5.4.3 Retention Period for Audit Logs
-
-The CA SHALL retain, for at least two years:
-
-  1. CA certificate and key lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (1)) after the later occurrence of:
-     1. the destruction of the CA Private Key; or
-     2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key;
-  2. Subscriber Certificate lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (2)) after the revocation or expiration of the Subscriber Certificate;
-  3. Any security event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (3)) after the event occurred.
 
 ### 5.4.4 Protection of Audit Log
 
@@ -1525,9 +1519,20 @@ Additionally, the CA's security program MUST include an annual Risk Assessment t
 
 ### 5.5.1 Types of records archived
 
+The CA SHALL archive all:
+1. Audit Log Event Records identified in [Section 5.4.1](#541-types-of-events-recorded); and
+2. Documentation relating to the verification, issuance, and revocation of certificate requests and Certificates.
+
 ### 5.5.2 Retention period for archive
 
-The CA SHALL retain all documentation relating to certificate requests and the verification thereof, and all Certificates and revocation thereof, for at least seven years after any Certificate based on that documentation ceases to be valid.
+The CA and each Delegated Third Party SHALL retain, for at least two years:
+
+  1. CA certificate and key lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (1)) after the later occurrence of:
+     1. the destruction of the CA Private Key; or
+     2. the revocation or expiration of the final CA Certificate in that set of Certificates that have an X.509v3 `basicConstraints` extension with the `cA` field set to true and which share a common Public Key corresponding to the CA Private Key;
+  2. Subscriber Certificate lifecycle management event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (2)) after the expiration of the Subscriber Certificate;
+  3. Any security event records (as set forth in [Section 5.4.1](#541-types-of-events-recorded) (3)) after the event occurred; and
+  4. All documentation relating to the verification, issuance, and revocation of certificate requests and Certificates.
 
 ### 5.5.3 Protection of archive
 
@@ -1610,6 +1615,8 @@ In all cases, the CA SHALL:
 #### 6.1.1.2 RA Key Pair Generation
 
 #### 6.1.1.3 Subscriber Key Pair Generation
+
+The CA SHALL implement a Trustworthy System or process which identifies Forbidden, Weak, or Compromised Keys (such as a Debian weak key, see https://wiki.debian.org/SSLkeys).
 
 The CA SHALL reject a certificate request if one or more of the following conditions are met:
 
