@@ -1000,7 +1000,11 @@ The CA SHALL disclose all Cross Certificates that identify the CA as the Subject
 
 ## 4.1 Certificate Application
 
-### 4.1.1 Enrollment process and responsibilities
+### 4.1.1 Who can submit a certificate application
+
+In accordance with [Section 5.5.2](#552-retention-period-for-archive), the CA SHALL maintain an internal database of all previously revoked Certificates and previously rejected certificate requests due to suspected phishing or other fraudulent usage or concerns. The CA SHALL use this information to identify subsequent suspicious certificate requests.
+
+### 4.1.2 Enrollment process and responsibilities
 
 Prior to the issuance of a Certificate, the CA SHALL obtain the following documentation from the Applicant:
 
